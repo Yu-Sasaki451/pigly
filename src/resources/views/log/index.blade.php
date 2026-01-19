@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/log/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/log/index.css') }}">
 </head>
-<body>
+<body class="body">
     @include('log.header')
 </body>
 </html>

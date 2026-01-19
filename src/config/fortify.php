@@ -75,8 +75,11 @@ return [
     */
 
     'home' => '/weight_logs',
-    'redirects' => ['register' => '/register/step2',],
-    'redirects' => [ 'logout' => 'login', ],
+    'redirects' =>
+        ['register' => '/register/step2',
+        'logout' => 'login',
+    ],
+
 
     /*
     |--------------------------------------------------------------------------

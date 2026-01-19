@@ -1,0 +1,53 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: white;
+}
+
+.header__title {
+    margin: 0;
+}
+
+.header__content {
+    display: flex;
+    gap: 20px;
+}
+
+.header-link {
+    width: 130px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 14px;
+    border: 1px solid rgb(208, 207, 207);
+    background-color: rgb(235, 234, 234);
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.svg-gear {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.logout__button {
+    width: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid rgb(208, 207, 207);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.svg-logout {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
