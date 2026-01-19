@@ -17,7 +17,9 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/register/step1', [AuthController::class, 'registerStep1']);
 Route::get('/register/step2', [AuthController::class, 'registerStep2']);
-Route::get('/login',[AuthController::class, 'login']);
+Route::get('/login',[AuthController::class, 'login'])->name('login');
 Route::post('/register/step2', [AuthController::class, 'store']);
 
-Route::get('/weight_logs', [AdminController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/weight_logs', [AuthController::class, 'index']);
+});
