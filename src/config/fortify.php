@@ -74,7 +74,8 @@ return [
     |
     */
 
-    'home' => RouteServiceProvider::HOME,
+    'home' => '/weight_logs',
+    'redirects' => ['register' => '/register/step2',],
 
     /*
     |--------------------------------------------------------------------------

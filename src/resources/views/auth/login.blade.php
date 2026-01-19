@@ -30,7 +30,7 @@
                         placeholder="パスワードを入力">
                 
                 <button class="register-button__submit" type="submit">ログイン</button>
-                <a class="link-login" href="/login">アカウント作成はこちら</a>
+                <a class="link-login" href="/register/step1">アカウント作成はこちら</a>
             </div>
         </div>
     </form>

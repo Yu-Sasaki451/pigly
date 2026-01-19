@@ -11,4 +11,9 @@ class WeightTarget extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    protected $fillable = [
+        'user_id',
+        'target_weight',
+    ];
 }
