@@ -17,7 +17,7 @@ class WeightTargetSeeder extends Seeder
 
         $userid =  DB::table('users')->value('id');
 
-        DB::table('weight_target')->insert([
+        DB::table('weight_targets')->insert([
             [
                 'user_id' => $userid,
                 'target_weight' => '45.1',

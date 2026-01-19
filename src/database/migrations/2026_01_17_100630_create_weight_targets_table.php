@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWeightTargetTable extends Migration
+class CreateWeightTargetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateWeightTargetTable extends Migration
      */
     public function up()
     {
-        Schema::create('weight_target', function (Blueprint $table) {
+        Schema::create('weight_targets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')
                 ->constrained()
