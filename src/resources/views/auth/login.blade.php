@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
 </head>
 <body class="body">
-    <form class="form-register" action="/register" method="post">
+    <form class="form-register" action="/login" method="post">
         @csrf
         <div class="register-content">
             <div class="register-content__heading">
@@ -26,7 +26,6 @@
                 <input class="register-content__input"
                         type="password"
                         name="password"
-                        value="{{ old('password') }}"
                         placeholder="パスワードを入力">
                 
                 <button class="register-button__submit" type="submit">ログイン</button>
