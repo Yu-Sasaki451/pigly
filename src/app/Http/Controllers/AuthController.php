@@ -13,4 +13,8 @@ class AuthController extends Controller
     public function registerStep2(){
         return view('auth.weight_register');
     }
+
+    public function login(){
+        return view('auth.login');
+    }
 }
