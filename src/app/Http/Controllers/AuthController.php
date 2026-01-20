@@ -39,7 +39,5 @@ class AuthController extends Controller
         return redirect('/weight_logs');
     }
 
-    public function index(){
-        return view('log.index');
-    }
+    
 }

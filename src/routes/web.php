@@ -21,5 +21,5 @@ Route::get('/login',[AuthController::class, 'login'])->name('login');
 Route::post('/register/step2', [AuthController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/weight_logs', [AuthController::class, 'index']);
+    Route::get('/weight_logs', [AdminController::class, 'index']);
 });

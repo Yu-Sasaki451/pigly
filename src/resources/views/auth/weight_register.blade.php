@@ -30,7 +30,7 @@
                         name="target_weight"
                         value="{{ old('target_weight') }}"
                         placeholder="目標の体重を入力">
-                
+
                 <button class="register-button__submit" type="submit">アカウント作成</button>
 
             </div>

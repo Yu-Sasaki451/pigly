@@ -21,4 +21,8 @@ class WeightLog extends Model
         'exercise_time',
         'exercise_content',
     ];
+
+    protected $casts = [
+        'date' => 'date'
+    ];
 }
