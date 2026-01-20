@@ -52,7 +52,7 @@
                 <td class="col-weight">{{ $weightLog->weight }}kg</td>
                 <td class="col-calories">{{ $weightLog->calories }}cal</td>
                 <td class="col-time">{{ substr($weightLog->exercise_time,0,5) }}</td>
-                <td class="col-edit">✏️</td>
+                <td class="col-edit"><a href="/weight_logs/{{ $weightLog->id }}/update">✏️</a></td>
             </tr>
             @endforeach
         </table>

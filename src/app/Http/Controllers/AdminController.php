@@ -20,7 +20,9 @@ class AdminController extends Controller
         ->paginate(8);
 
 
-        $current_weight = $weightLogs->first()?->weight;
+        $current_weight = WeightLog::where('user_id', $userId)
+        ->orderByDesc('date')
+        ->value('weight');
 
         $diff_target = (float)$target_weight - (float)$current_weight;
 
@@ -31,5 +33,11 @@ class AdminController extends Controller
             'current_weight',
             'diff_target',
         ));
+    }
+
+    public function edit($id){
+        $weight = WeightLog::find($id);
+
+        return view('log.edit',compact('weight'));
     }
 }
