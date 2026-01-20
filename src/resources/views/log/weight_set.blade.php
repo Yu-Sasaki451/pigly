@@ -11,7 +11,7 @@
 <body class="body">
     @include('log.header')
     <main class="main">
-        <form class="set-form" action="/wight_logs/goal_setting" method="post">
+        <form class="set-form" action="/weight_logs/goal_setting" method="post">
             @csrf
             @method('patch')
             <h2 class="set-form__title">目標体重設定</h2>
