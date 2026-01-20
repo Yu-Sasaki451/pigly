@@ -1,7 +1,7 @@
 <header class="header">
     <h1 class="header__title">PiGLy</h1>
     <div class="header__content">
-        <a class="header-link" href="">
+        <a class="header-link" href="/wight_logs/goal_setting">
             <img class="svg-gear" src="{{ asset('img/gear.svg') }}" alt="">
             目標体重設定
         </a>

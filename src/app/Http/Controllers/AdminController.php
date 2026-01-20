@@ -10,8 +10,7 @@ class AdminController extends Controller
 {
     public function index(){
 
-        $userId = 1;
-        //$userId = auth()->id();
+        $userId = auth()->id();
 
         $target_weight = weightTarget::where('user_id',$userId)->value('target_weight');
 
@@ -35,13 +34,31 @@ class AdminController extends Controller
         ));
     }
 
+    public function setTarget(){
+
+        $userId = auth()->id();
+
+        $target_weight = WeightTarget::where('user_id',$userId)->first();
+
+        return view('log.weight_set',compact('target_weight'));
+
+    }
+
+    public function updateTarget(Request $request){
+
+        WeightTarget::where('user_id', auth()->id())
+            ->update(['target_weight' => $request->input('target_weight')]);
+
+        return redirect('/weight_logs');
+    }
+
     public function edit($id){
         $weight = WeightLog::find($id);
 
         return view('log.edit',compact('weight'));
     }
 
-    public function update(Request $request,$id){
+    public function updateLog(Request $request,$id){
 
         $weight_log = WeightLog::find($id);
         $weight_log->date = $_POST["date"];

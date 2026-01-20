@@ -36,7 +36,7 @@
                 <button class="search-form__button">検索</button>
             </div>
 
-            <a class="add-link" href="/wight_logs/goal_setting">データ追加</a>
+            <a class="add-link" href="/weight_logs/create">データ追加</a>
         </div>
         <table class="log-table">
             <tr class="table-row">
