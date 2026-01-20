@@ -40,4 +40,17 @@ class AdminController extends Controller
 
         return view('log.edit',compact('weight'));
     }
+
+    public function update(Request $request,$id){
+
+        $weight_log = WeightLog::find($id);
+        $weight_log->date = $_POST["date"];
+        $weight_log->weight = $_POST["weight"];
+        $weight_log->calories = $_POST["calories"];
+        $weight_log->exercise_time = $_POST["exercise_time"];
+        $weight_log->exercise_content = $_POST["exercise_content"];
+        $weight_log->save();
+
+        return redirect('/weight_logs');
+    }
 }

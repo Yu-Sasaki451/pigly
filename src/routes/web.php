@@ -24,3 +24,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/weight_logs', [AdminController::class, 'index']);
 });
 Route::get('/weight_logs/{Id}/update', [AdminController::class, 'edit']);
+Route::patch('/weight_logs/{Id}/update', [AdminController::class, 'update']);

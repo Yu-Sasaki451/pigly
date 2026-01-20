@@ -10,35 +10,38 @@
 </head>
 <body class="body">
     @include('log.header')
-    <form class="edit-form" action="">
-        <div class="edit-form__content">
-            <h2>Weight Log</h2>
-            <label class="edit-form__label" for="">日付</label>
-            <input class="edit-form__input" type="date" name="date" value="{{request('date')}}">
+    <main class="edit">
+        <form class="edit-form" id="edit-form"
+        action="/weight_logs/{{ $weight->id }}/update" method="post">
+        @csrf
+        @method('patch')
+            <div class="edit-form__content">
+                <h2>Weight Log</h2>
+                <label class="edit-form__label" for="">日付</label>
+                <input class="edit-form__input" type="date" name="date" value="{{request('date')}}">
 
-            <label class="edit-form__label" for="">体重</label>
-            <input class="edit-form__int" type="text" value="{{ $weight->weight }}"> kg
+                <label class="edit-form__label" for="">体重</label>
+                <input class="edit-form__int" type="number" step="0.1" name="weight" value="{{ $weight->weight }}"> kg
 
-            <label class="edit-form__label" for="">摂取カロリー</label>
-            <input class="edit-form__int" type="text" value="{{ $weight->calories }}"> cal
+                <label class="edit-form__label" for="">摂取カロリー</label>
+                <input class="edit-form__int" type="number" name="calories" value="{{ $weight->calories }}"> cal
 
-            <label class="edit-form__label" for="">運動時間</label>
-            <input class="edit-form__input" type="time" value="{{ substr($weight->exercise_time,0,5) }}">
+                <label class="edit-form__label" for="">運動時間</label>
+                <input class="edit-form__input" type="time" name="exercise_time" value="{{ substr($weight->exercise_time,0,5) }}">
 
-            <label class="edit-form__label" for="">運動内容</label>
-            <textarea class="edit-form__textarea" name="" id="">{{ $weight->exercise_content }}</textarea>
-        </div>
+                <label class="edit-form__label" for="">運動内容</label>
+                <textarea class="edit-form__textarea" name="exercise_content">{{ $weight->exercise_content }}</textarea>
+            </div>
+        </form>
         <div class="content__items">
             <div class="content-item--center">
                 <a class="link-back" href="/weight_logs">戻る</a>
-                <button class="update-button">更新</button>
+                <button class="update-button" type="submit" form="edit-form">更新</button>
             </div>
-            <div class="content-item--right">
-                <form class="delete-form" action="" method="post">
-                    @csrf
-                    <input type="hidden">
-                    <span>🗑️</span>
-                </form>
-            </div>
+            <form class="delete-form" action="" method="post">
+                @csrf
+                <input type="hidden">
+                <span>🗑️</span>
+            </form>
         </div>
-    </form>
+    </main>
