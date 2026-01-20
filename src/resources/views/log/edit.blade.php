@@ -17,16 +17,16 @@
             <input class="edit-form__input" type="date" name="date" value="{{request('date')}}">
 
             <label class="edit-form__label" for="">体重</label>
-            <input class="edit-form__int" type="text" placeholder="50.0"> kg
+            <input class="edit-form__int" type="text" value="{{ $weight->weight }}"> kg
 
             <label class="edit-form__label" for="">摂取カロリー</label>
-            <input class="edit-form__int" type="text" placeholder="1200"> cal
+            <input class="edit-form__int" type="text" value="{{ $weight->calories }}"> cal
 
             <label class="edit-form__label" for="">運動時間</label>
-            <input class="edit-form__input" type="time">
+            <input class="edit-form__input" type="time" value="{{ substr($weight->exercise_time,0,5) }}">
 
             <label class="edit-form__label" for="">運動内容</label>
-            <input class="edit-form__text" type="text" placeholder="運動内容を追加">
+            <textarea class="edit-form__textarea" name="" id="">{{ $weight->exercise_content }}</textarea>
         </div>
         <div class="content__items">
             <div class="content-item--center">
