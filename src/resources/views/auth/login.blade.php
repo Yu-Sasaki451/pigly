@@ -18,16 +18,25 @@
             <div class="register-content-items">
                 <label class="register-content__label">メールアドレス</label>
                 <input class="register-content__input"
-                        type="email"
+                        type="text"
                         name="email"
                         value="{{ old('email') }}"
                         placeholder="メールアドレスを入力">
+                <div class="pigly__error">
+                    @error('email')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <label class="register-content__label">パスワード</label>
                 <input class="register-content__input"
                         type="password"
                         name="password"
                         placeholder="パスワードを入力">
-                
+                <div class="pigly__error">
+                    @error('password')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <button class="register-button__submit" type="submit">ログイン</button>
                 <a class="link-login" href="/register/step1">アカウント作成はこちら</a>
             </div>

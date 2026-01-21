@@ -23,19 +23,33 @@
                         name="name"
                         value="{{ old('name') }}"
                         placeholder="名前を入力">
+                <div class="pigly__error">
+                        @error('name')
+                        {{ $message }}
+                        @enderror
+                </div>
                 <label class="register-content__label">メールアドレス</label>
                 <input class="register-content__input"
-                        type="email"
+                        type="text"
                         name="email"
                         value="{{ old('email') }}"
                         placeholder="メールアドレスを入力">
+                <div class="pigly__error">
+                        @error('email')
+                        {{ $message }}
+                        @enderror
+                </div>
                 <label class="register-content__label">パスワード</label>
                 <input class="register-content__input"
                         type="password"
                         name="password"
                         value="{{ old('password') }}"
                         placeholder="パスワードを入力">
-                
+                <div class="pigly__error">
+                        @error('password')
+                        {{ $message }}
+                        @enderror
+                </div>
                 <button class="register-button__submit" type="submit">次へ進む</button>
                 <a class="link-login" href="/login">ログインはこちら</a>
             </div>
