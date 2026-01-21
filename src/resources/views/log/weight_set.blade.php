@@ -16,9 +16,14 @@
             @method('patch')
             <h2 class="set-form__title">目標体重設定</h2>
             <input class="set-form__input"
-            type="number"
+            type="text"
             step="0.1" name="target_weight"
             value="{{ $target_weight->target_weight }}"> kg
+            <div class="set__error">
+                    @error('target_weight')
+                    {{ $message }}
+                    @enderror
+            </div>
             <div class="set-form__items">
                 <a class="link-back" href="/weight_logs">戻る</a>
                 <button class="set-form__button" type="submit">更新</button>

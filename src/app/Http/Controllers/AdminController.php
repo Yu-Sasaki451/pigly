@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use App\Http\Requests\WeightLogRequest;
+use App\Http\Requests\TargetRequest;
 
 class AdminController extends Controller
 {
@@ -45,7 +46,7 @@ class AdminController extends Controller
 
     }
 
-    public function updateTarget(Request $request){
+    public function updateTarget(TargetRequest $request){
 
         WeightTarget::where('user_id', auth()->id())
             ->update(['target_weight' => $request->input('target_weight')]);

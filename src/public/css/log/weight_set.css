@@ -29,7 +29,6 @@
     width: 350px;
     height: 35px;
     margin-top: 10px;
-    margin-bottom: 30px;
     border: 1px solid gainsboro;
     border-radius: 5px;
     padding: 0 10px;
@@ -56,4 +55,11 @@
     border-radius: 5px;
     color: white;
     cursor: pointer;
+}
+
+.set__error {
+    line-height: 1.5;
+    min-height: 1.5em;
+    text-align: left;
+    color: red;
 }
