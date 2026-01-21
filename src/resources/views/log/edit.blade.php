@@ -12,7 +12,7 @@
     @include('log.header')
     <main class="edit">
         <form class="edit-form" id="edit-form"
-        action="/weight_logs/{{ $weight->id }}/update" method="post">
+        action="/weight_logs/{{ $weight_log->id }}/update" method="post">
         @csrf
         @method('patch')
             <div class="edit-form__content">
@@ -21,16 +21,16 @@
                 <input class="edit-form__input" type="date" name="date" value="{{request('date')}}">
 
                 <label class="edit-form__label" for="">体重</label>
-                <input class="edit-form__int" type="number" step="0.1" name="weight" value="{{ $weight->weight }}"> kg
+                <input class="edit-form__int" type="number" step="0.1" name="weight" value="{{ $weight_log->weight }}"> kg
 
                 <label class="edit-form__label" for="">摂取カロリー</label>
-                <input class="edit-form__int" type="number" name="calories" value="{{ $weight->calories }}"> cal
+                <input class="edit-form__int" type="number" name="calories" value="{{ $weight_log->calories }}"> cal
 
                 <label class="edit-form__label" for="">運動時間</label>
-                <input class="edit-form__input" type="time" name="exercise_time" value="{{ substr($weight->exercise_time,0,5) }}">
+                <input class="edit-form__input" type="time" name="exercise_time" value="{{ substr($weight_log->exercise_time,0,5) }}">
 
                 <label class="edit-form__label" for="">運動内容</label>
-                <textarea class="edit-form__textarea" name="exercise_content">{{ $weight->exercise_content }}</textarea>
+                <textarea class="edit-form__textarea" name="exercise_content">{{ $weight_log->exercise_content }}</textarea>
             </div>
         </form>
         <div class="content__items">
@@ -38,10 +38,12 @@
                 <a class="link-back" href="/weight_logs">戻る</a>
                 <button class="update-button" type="submit" form="edit-form">更新</button>
             </div>
-            <form class="delete-form" action="" method="post">
+            <form class="delete-form" action="/weight_logs/{{ $weight_log->id }}/delete" method="post">
                 @csrf
-                <input type="hidden">
-                <span>🗑️</span>
+                @method('delete')
+                <button class="delete-button" type="submit">
+                    <img class="svg-trash" src="{{ asset('img/trash.svg') }}" alt="">
+                </button>
             </form>
         </div>
     </main>

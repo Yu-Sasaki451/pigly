@@ -53,9 +53,9 @@ class AdminController extends Controller
     }
 
     public function edit($id){
-        $weight = WeightLog::find($id);
+        $weight_log = WeightLog::find($id);
 
-        return view('log.edit',compact('weight'));
+        return view('log.edit',compact('weight_log'));
     }
 
     public function updateLog(Request $request,$id){
@@ -90,6 +90,13 @@ class AdminController extends Controller
 
         return redirect('/weight_logs');
 
+    }
+
+    public function destroy($id){
+        $weight_log = WeightLog::find($id);
+        $weight_log->delete();
+
+        return redirect('/weight_logs');
     }
 
 
