@@ -32,7 +32,7 @@
     padding: 0 10px;
 }
 
-.edit__error {
+.pigly__error {
     line-height: 1.5;
     min-height: 1.5em;
     color: red;

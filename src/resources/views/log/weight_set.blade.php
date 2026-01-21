@@ -19,7 +19,7 @@
             type="text"
             step="0.1" name="target_weight"
             value="{{ $target_weight->target_weight }}"> kg
-            <div class="set__error">
+            <div class="pigly__error">
                     @error('target_weight')
                     {{ $message }}
                     @enderror

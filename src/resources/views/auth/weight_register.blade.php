@@ -19,17 +19,28 @@
             <div class="register-content-items">
                 <label class="register-content__label">現在の体重</label>
                 <input class="register-content__input"
-                        type="number"
+                        type="text"
                         step="0.1"
                         name="weight"
                         value="{{ old('weight') }}"
                         placeholder="現在の体重を入力">
+                <div class="pigly__error">
+                    @error('target_weight')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <label class="register-content__label">目標の体重</label>
                 <input class="register-content__input"
-                        type="number"
+                        type="text"
+                        step="0.1"
                         name="target_weight"
                         value="{{ old('target_weight') }}"
                         placeholder="目標の体重を入力">
+                <div class="pigly__error">
+                    @error('target_weight')
+                    {{ $message }}
+                    @enderror
+                </div>
 
                 <button class="register-button__submit" type="submit">アカウント作成</button>
 

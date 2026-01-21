@@ -19,7 +19,7 @@
                 <h2>Weight Log</h2>
                 <label class="edit-form__label" for="">日付</label>
                 <input class="edit-form__input" type="date" name="date" value="{{request('date')}}">
-                <div class="edit__error">
+                <div class="pigly__error">
                             @error('date')
                             {{ $message }}
                             @enderror
@@ -27,7 +27,7 @@
 
                 <label class="edit-form__label" for="">体重</label>
                 <input class="edit-form__int" type="number" step="0.1" name="weight" value="{{ $weight_log->weight }}"> kg
-                <div class="edit__error">
+                <div class="pigly__error">
                             @error('weight')
                             {{ $message }}
                             @enderror
@@ -35,7 +35,7 @@
 
                 <label class="edit-form__label" for="">摂取カロリー</label>
                 <input class="edit-form__int" type="text" name="calories" value="{{ $weight_log->calories }}"> cal
-                <div class="edit__error">
+                <div class="pigly__error">
                             @error('calories')
                             {{ $message }}
                             @enderror
@@ -43,7 +43,7 @@
 
                 <label class="edit-form__label" for="">運動時間</label>
                 <input class="edit-form__input" type="time" name="exercise_time" value="{{ substr($weight_log->exercise_time,0,5) }}">
-                <div class="edit__error">
+                <div class="pigly__error">
                             @error('exercise_time')
                             {{ $message }}
                             @enderror
@@ -51,7 +51,7 @@
 
                 <label class="edit-form__label" for="">運動内容</label>
                 <textarea class="edit-form__textarea" name="exercise_content">{{ $weight_log->exercise_content }}</textarea>
-                <div class="edit__error">
+                <div class="pigly__error">
                             @error('exercise_content')
                             {{ $message }}
                             @enderror

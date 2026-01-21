@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
+use App\Http\Requests\WeightRegisterRequest;
 
 class AuthController extends Controller
 {
@@ -20,7 +21,7 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function store(Request $request){
+    public function store(WeightRegisterRequest $request){
 
         $userId = auth()->id();
         $now = now();
@@ -38,6 +39,4 @@ class AuthController extends Controller
 
         return redirect('/weight_logs');
     }
-
-    
 }
