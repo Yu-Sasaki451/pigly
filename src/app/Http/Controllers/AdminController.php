@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
+use App\Http\Requests\WeightLogRequest;
 
 class AdminController extends Controller
 {
@@ -58,7 +59,7 @@ class AdminController extends Controller
         return view('log.edit',compact('weight_log'));
     }
 
-    public function updateLog(Request $request,$id){
+    public function updateLog(WeightLogRequest $request,$id){
 
         $weight_log = WeightLog::find($id);
         $weight_log->date = $_POST["date"];

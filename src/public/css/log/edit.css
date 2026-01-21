@@ -9,7 +9,7 @@
 
 .edit {
     width: 600px;
-    height: 650px;
+    height: 700px;
     background-color: white;
     margin: 0 auto;
     margin-top: 30px;
@@ -27,10 +27,15 @@
 
 .edit-form__content input {
     display: inline-block;
-    margin-bottom: 20px;
     border: 1px solid gainsboro;
     border-radius: 5px;
     padding: 0 10px;
+}
+
+.edit__error {
+    line-height: 1.5;
+    min-height: 1.5em;
+    color: red;
 }
 
 .edit-form__input {
