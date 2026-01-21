@@ -27,3 +27,6 @@ Route::get('/weight_logs/goal_setting', [AdminController::class, 'setTarget']);
 Route::patch('/weight_logs/goal_setting', [AdminController::class, 'updateTarget']);
 Route::get('/weight_logs/{Id}/update', [AdminController::class, 'edit']);
 Route::patch('/weight_logs/{Id}/update', [AdminController::class, 'updateLog']);
+
+Route::get('/weight_logs/create', [AdminController::class, 'create']);
+Route::post('/weight_logs/create', [AdminController::class, 'store']);

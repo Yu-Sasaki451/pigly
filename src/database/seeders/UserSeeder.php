@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Luffy',
                 'email' => 'onepiece@test.com',
-                'password' => 'gear5'
+                'password' => '5656gear5'
             ]
         ]);
     }

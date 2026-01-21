@@ -70,4 +70,27 @@ class AdminController extends Controller
 
         return redirect('/weight_logs');
     }
+
+    public function create(){
+
+        return view('modal');
+    }
+
+    public function store(Request $request){
+        $userId = auth()->id();
+
+        $weight_log = new WeightLog;
+        $weight_log->user_id = $userId;
+        $weight_log->date = $_POST['date'];
+        $weight_log->weight = $_POST['weight'];
+        $weight_log->calories = $_POST['calories'];
+        $weight_log->exercise_time = $_POST['exercise_time'];
+        $weight_log->exercise_content = $_POST['exercise_content'];
+        $weight_log->save();
+
+        return redirect('/weight_logs');
+
+    }
+
+
 }
