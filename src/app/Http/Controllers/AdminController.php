@@ -78,7 +78,7 @@ class AdminController extends Controller
         return view('modal');
     }
 
-    public function store(Request $request){
+    public function store(WeightLogRequest $request){
         $userId = auth()->id();
 
         $weight_log = new WeightLog;

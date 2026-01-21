@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/log/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/log/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paginate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+
 </head>
 <body class="body">
     @include('log.header')
@@ -59,13 +59,22 @@
         </table>
         <div class="paginate">{{ $weightLogs->links('vendor.paginate') }}</div>
     </form>
-    
+
     <dialog class="modal" data-modal>
         <form class="modal-form" action="/weight_logs/create" method="post">
             @csrf
             @include('modal')
         </form>
     </dialog>
+
+    @if ($errors->any())
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const dialog = document.querySelector('[data-modal]');
+        if (dialog && !dialog.open) dialog.showModal();
+    });
+    </script>
+    @endif
 
     <script>
     const dialog = document.querySelector('[data-modal]');

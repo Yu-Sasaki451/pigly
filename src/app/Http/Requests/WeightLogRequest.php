@@ -49,4 +49,6 @@ class WeightLogRequest extends FormRequest
             'exercise_content.max' => '120文字以内で入力してください',
         ];
     }
+
+    
 }

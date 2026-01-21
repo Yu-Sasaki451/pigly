@@ -87,7 +87,7 @@
 
 
 
-th {
+.table-row th {
     position: relative;
     padding: 0.8rem 0;
     margin-bottom: 0.2rem;
@@ -97,14 +97,19 @@ th {
     background-position: bottom;
 }
 
-td {
+.table-row td {
     border-bottom: 1px solid gainsboro;
     text-align: center;
     line-height: 3;
     color: dimgray;
+
 }
 
-.col-date {
+.table-row:hover td {
+    background-color: rgb(236, 236, 236);
+}
+
+.table-row .col-date {
     text-align: start;
     padding: 0 20px;
 }
@@ -115,6 +120,7 @@ td {
     padding: 20px;
 }
 
+/*　ここからモーダル*/
 
 .modal {
     border: none;
@@ -140,7 +146,7 @@ td {
 }
 
 .content-title {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .modal-form__label {
@@ -149,10 +155,10 @@ td {
 
 .modal-form__content input {
     display: inline-block;
-    margin-bottom: 30px;
     border: 1px solid gainsboro;
     border-radius: 5px;
     padding: 0 10px;
+    margin: 0;
 }
 
 .modal-form__input {
@@ -194,4 +200,12 @@ td {
     border-radius: 5px;
     color: white;
     cursor: pointer;
+}
+
+.pigly__error {
+    line-height: 1.5;
+    min-height: 1.5em;
+    text-align: left;
+    color: red;
+    margin-bottom: 10px;
 }
