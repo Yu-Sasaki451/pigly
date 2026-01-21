@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/log/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/log/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paginate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 </head>
 <body class="body">
     @include('log.header')
@@ -36,7 +37,7 @@
                 <button class="search-form__button">検索</button>
             </div>
 
-            <a class="add-link" href="/weight_logs/create">データ追加</a>
+            <a class="add-link" href="/weight_logs/create" data-modal-open>データ追加</a>
         </div>
         <table class="log-table">
             <tr class="table-row">
@@ -59,5 +60,26 @@
         <div class="paginate">{{ $weightLogs->links('vendor.paginate') }}</div>
     </form>
     
+    <dialog class="modal" data-modal>
+        <form class="modal-form" action="/weight_logs/create" method="post">
+            @csrf
+            @include('modal')
+        </form>
+    </dialog>
+
+    <script>
+    const dialog = document.querySelector('[data-modal]');
+    const openLink = document.querySelector('[data-modal-open]');
+
+    openLink?.addEventListener('click', (e) => {
+        e.preventDefault();          // a の遷移を止める
+        dialog?.showModal();         // dialog を開く
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.matches('[data-modal-close]')) dialog?.close();
+    });
+</script>
+
 </body>
 </html>

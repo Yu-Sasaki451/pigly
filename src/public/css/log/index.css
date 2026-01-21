@@ -114,3 +114,84 @@ td {
     justify-content: center;
     padding: 20px;
 }
+
+
+.modal {
+    border: none;
+    padding: 0;
+    border-radius: 12px;
+    width: min(600px, 92vw);
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, .5);
+}
+
+.modal-form {
+    width: 600px;
+    height: 700px;
+    background-color: white;
+
+}
+
+.modal-form__content {
+    width: 100%;
+    padding: 10px;
+}
+
+.content-title {
+    margin-bottom: 40px;
+}
+
+.modal-form__label {
+    display: block;
+}
+
+.modal-form__content input {
+    display: inline-block;
+    margin-bottom: 30px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.modal-form__input {
+    width: 100%;
+    height: 30px;
+}
+
+.modal-form__int {
+    width: 95%;
+    height: 30px;
+}
+
+.modal-form__textarea {
+    width: 100%;
+    height: 120px;
+    padding: 6px 10px;
+}
+
+.content-item {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.link-back {
+    padding: 5px 50px;
+    background-color: rgb(205, 205, 205);
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.store-button {
+    width: 120px;
+    height: 35px;
+    border: none;
+    background-image: linear-gradient(90deg, #8424f380, #f75eb980);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
