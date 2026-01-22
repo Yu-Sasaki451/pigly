@@ -34,7 +34,7 @@
     color: gainsboro;
 }
 
-.search-form {
+.main {
     width: 1000px;
     background-color: white;
     border-radius: 10px;
@@ -42,14 +42,14 @@
     margin-top: 20px;
 }
 
-.search-form__inner {
+.search-date__content{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
 
-.search-form__date {
+.search-date__input {
     width: 150px;
     height: 30px;
     border: 1px solid gainsboro;
@@ -57,7 +57,7 @@
     color: gainsboro;
 }
 
-.search-form__button {
+.search-date__button {
     width: 80px;
     height: 30px;
     margin-left: 10px;

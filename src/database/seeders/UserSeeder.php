@@ -15,11 +15,15 @@ class UserSeeder extends Seeder
     public function run()
     {
 
+        $now = now();
+
         DB::table('users')->insert([
             [
                 'name' => 'Luffy',
                 'email' => 'onepiece@test.com',
-                'password' => '5656gear5'
+                'password' => bcrypt('5656gear5'),
+                'created_at' => $now,
+                'updated_at' => $now,
             ]
         ]);
     }

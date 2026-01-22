@@ -10,15 +10,15 @@ use App\Http\Requests\TargetRequest;
 
 class AdminController extends Controller
 {
-    public function index(){
+        //管理画面
+    public function index(Request $request){
 
         $userId = auth()->id();
 
         $target_weight = weightTarget::where('user_id',$userId)->value('target_weight');
 
-        $weightLogs = WeightLog::where('user_id',$userId)
-        ->orderByDesc('date')
-        ->paginate(8);
+        $query = WeightLog::where('user_id',$userId)
+                    ->orderByDesc('date');
 
 
         $current_weight = WeightLog::where('user_id', $userId)
@@ -26,6 +26,17 @@ class AdminController extends Controller
         ->value('weight');
 
         $diff_target = (float)$target_weight - (float)$current_weight;
+
+        //検索機能
+        $from = $request->input('from');
+        $until = $request->input('until');
+
+        if (!empty($from) && !empty($until)) {
+        $query->whereBetween('date', [$from, $until]);
+        }
+
+
+        $weightLogs = $query->paginate(8)->appends($request->query());
 
         return view('log.index',compact(
             'userId',
@@ -36,6 +47,7 @@ class AdminController extends Controller
         ));
     }
 
+        //目標体重画面
     public function setTarget(){
 
         $userId = auth()->id();
@@ -45,7 +57,7 @@ class AdminController extends Controller
         return view('log.weight_set',compact('target_weight'));
 
     }
-
+        //目標体重更新処理
     public function updateTarget(TargetRequest $request){
 
         WeightTarget::where('user_id', auth()->id())
@@ -54,12 +66,14 @@ class AdminController extends Controller
         return redirect('/weight_logs');
     }
 
+        //Log変更画面
     public function edit($id){
         $weight_log = WeightLog::find($id);
 
         return view('log.edit',compact('weight_log'));
     }
 
+        //Log更新処理
     public function updateLog(WeightLogRequest $request,$id){
 
         $weight_log = WeightLog::find($id);
@@ -73,11 +87,13 @@ class AdminController extends Controller
         return redirect('/weight_logs');
     }
 
+        //モーダル表示
     public function create(){
 
         return view('modal');
     }
 
+        //Log登録処理
     public function store(WeightLogRequest $request){
         $userId = auth()->id();
 
@@ -94,12 +110,14 @@ class AdminController extends Controller
 
     }
 
+        //Log削除処理
     public function destroy($id){
         $weight_log = WeightLog::find($id);
         $weight_log->delete();
 
         return redirect('/weight_logs');
     }
+
 
 
 }
