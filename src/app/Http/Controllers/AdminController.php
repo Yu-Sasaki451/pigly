@@ -56,6 +56,7 @@ class AdminController extends Controller
             'fromJa',
             'untilJa',
             'searchResultText',
+            'searched',
         ));
     }
 

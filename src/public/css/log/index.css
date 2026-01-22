@@ -49,6 +49,12 @@
     padding: 20px;
 }
 
+.search-date__content--left {
+    display: flex;
+    align-items: center;
+}
+
+
 .search-date__input {
     width: 150px;
     height: 30px;
@@ -66,6 +72,16 @@
     border-radius: 5px;
     color: white;
     cursor: pointer;
+}
+
+.search-date--reset {
+    padding: 5px 15px;
+    text-decoration: none;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+
 }
 
 .search-result {

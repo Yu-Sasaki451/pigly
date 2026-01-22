@@ -36,6 +36,9 @@
                     <span>〜</span>
                     <input class="search-date__input" type="date" name="until" value="{{ request('until') }}">
                     <button class="search-date__button">検索</button>
+                    @if($searched)
+                    <a class="search-date--reset" href="/weight_logs">リセット</a>
+                    @endif
                 </div>
                 <a class="add-link" href="/weight_logs/create" data-modal-open>データ追加</a>
             </div>
