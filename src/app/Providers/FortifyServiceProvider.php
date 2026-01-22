@@ -3,14 +3,11 @@
 namespace App\Providers;
 
 use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
-use Illuminate\Cache\RateLimiting\Limit;
+use App\Http\Requests\LoginFormRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 
 class FortifyServiceProvider extends ServiceProvider
@@ -29,5 +26,17 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
-    }
+
+        Fortify::authenticateUsing(function (LoginFormRequest $request) {
+
+
+            $user = User::where('email', $request->input('email'))->first();
+
+            if ($user && Hash::check($request->input('password'), $user->password)) {
+                return $user;
+            }
+
+            return null;
+    });
+}
 }
