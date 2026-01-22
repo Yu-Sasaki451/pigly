@@ -68,7 +68,10 @@
     cursor: pointer;
 }
 
-
+.search-result {
+    margin: 0;
+    margin-left: 20px;
+}
 
 .add-link {
     padding: 4px 25px;

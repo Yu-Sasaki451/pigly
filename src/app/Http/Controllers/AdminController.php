@@ -32,10 +32,12 @@ class AdminController extends Controller
         $until = $request->input('until');
 
         $fromJa = $from ? \carbon\carbon::parse($from)->format('Y年n月j日'): '';
-        $untilJa = $from ? \carbon\carbon::parse($until)->format('Y年n月j日'): '';
+        $untilJa = $until ? \carbon\carbon::parse($until)->format('Y年n月j日'): '';
+
+        $searched = $request->filled(['from', 'until']);
 
 
-        if (!empty($from) && !empty($until)) {
+        if ($searched) {
         $query->whereBetween('date', [$from, $until]);
         }
 
@@ -43,7 +45,7 @@ class AdminController extends Controller
         $weightLogs = $query->paginate(8)->appends($request->query());
 
         $total = $weightLogs->total();
-        $searchResultText = $this->searchResult($total);
+        $searchResultText = $this->searchResult($searched, $total, $fromJa, $untilJa);
 
         return view('log.index',compact(
             'userId',
@@ -57,12 +59,12 @@ class AdminController extends Controller
         ));
     }
 
-    private function searchResult(int $total): string
+    private function searchResult(bool $searched,int $total,string $fromJa,string $untilJa): string
     {
-        if ($total === 0) {
+        if (!$searched) {
             return '';
         }
-        return "の検索結果{$total}件";
+        return "{$fromJa}~{$untilJa}の検索結果{$total}件";
     }
 
         //目標体重画面
