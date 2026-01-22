@@ -39,6 +39,9 @@
                 </div>
                 <a class="add-link" href="/weight_logs/create" data-modal-open>データ追加</a>
             </div>
+            @if(!empty($searchResultText))
+                <p>{{ $fromJa }}〜{{ $untilJa }}{{ $searchResultText }}</p>
+            @endif
         </form>
         <form class="search-form" action="/weight_logs/search" method="post">
             <table class="log-table">

@@ -15,7 +15,7 @@ class AdminController extends Controller
 
         $userId = auth()->id();
 
-        $target_weight = weightTarget::where('user_id',$userId)->value('target_weight');
+        $target_weight = WeightTarget::where('user_id',$userId)->value('target_weight');
 
         $query = WeightLog::where('user_id',$userId)
                     ->orderByDesc('date');
@@ -31,6 +31,10 @@ class AdminController extends Controller
         $from = $request->input('from');
         $until = $request->input('until');
 
+        $fromJa = $from ? \carbon\carbon::parse($from)->format('Y年n月j日'): '';
+        $untilJa = $from ? \carbon\carbon::parse($until)->format('Y年n月j日'): '';
+
+
         if (!empty($from) && !empty($until)) {
         $query->whereBetween('date', [$from, $until]);
         }
@@ -38,13 +42,27 @@ class AdminController extends Controller
 
         $weightLogs = $query->paginate(8)->appends($request->query());
 
+        $total = $weightLogs->total();
+        $searchResultText = $this->searchResult($total);
+
         return view('log.index',compact(
             'userId',
             'target_weight',
             'weightLogs',
             'current_weight',
             'diff_target',
+            'fromJa',
+            'untilJa',
+            'searchResultText',
         ));
+    }
+
+    private function searchResult(int $total): string
+    {
+        if ($total === 0) {
+            return '';
+        }
+        return "の検索結果{$total}件";
     }
 
         //目標体重画面

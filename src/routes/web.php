@@ -23,6 +23,7 @@ Route::post('/register/step2', [AuthController::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/weight_logs', [AdminController::class, 'index']);
 });
+Route::get('/weight_logs/search', [AdminController::class, 'index']);
 Route::get('/weight_logs/goal_setting', [AdminController::class, 'setTarget']);
 Route::patch('/weight_logs/goal_setting', [AdminController::class, 'updateTarget']);
 Route::get('/weight_logs/{Id}/update', [AdminController::class, 'edit']);
