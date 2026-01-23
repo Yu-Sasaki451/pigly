@@ -2,7 +2,7 @@
 <div class="modal-form__content">
         <h2 class="content-title">Weight Logを追加</h2>
         <label class="modal-form__label" for="">日付<span> 必須</span></label>
-        <input class="modal-form__input" type="date" name="date" value="{{ old('date') }}">
+        <input class="modal-form__date" type="date" name="date"  value="{{ old('date') }}">
         <div class="pigly__error">
                 @error('date')
                 {{ $message }}
@@ -10,7 +10,7 @@
         </div>
 
         <label class="modal-form__label" for="">体重<span> 必須</span></label>
-        <input class="modal-form__int" type="number" step="0.1" name="weight" value="{{ old('weight') }}" placeholder="50.0"> kg
+        <input class="modal-form__int" type="text" step="0.1" name="weight" value="{{ old('weight') }}" placeholder="50.0"> kg
         <div class="pigly__error">
                 @error('weight')
                 {{ $message }}
@@ -18,7 +18,7 @@
         </div>
 
         <label class="modal-form__label" for="">摂取カロリー<span> 必須</span></label>
-        <input class="modal-form__int" type="number" name="calories" value="{{ old('calories') }}" placeholder="1200"> cal
+        <input class="modal-form__int" type="text" name="calories" value="{{ old('calories') }}" placeholder="1200"> cal
         <div class="pigly__error">
                 @error('calories')
                 {{ $message }}
