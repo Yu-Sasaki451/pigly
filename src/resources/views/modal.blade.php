@@ -2,7 +2,7 @@
 <div class="modal-form__content">
         <h2 class="content-title">Weight Logを追加</h2>
         <label class="modal-form__label" for="">日付<span> 必須</span></label>
-        <input class="modal-form__date" type="date" name="date"  value="{{ old('date') }}">
+        <input class="modal-form__date" type="date" name="date"  value="<?php echo date('Y-m-j');?>">
         <div class="pigly__error">
                 @error('date')
                 {{ $message }}

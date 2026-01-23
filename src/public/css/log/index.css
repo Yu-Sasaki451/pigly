@@ -189,6 +189,11 @@
     height: 30px;
 }
 
+.modal-form__date {
+    width: 100%;
+    height: 30px;
+}
+
 .modal-form__int {
     width: 95%;
     height: 30px;
