@@ -10,6 +10,8 @@
     margin: 0;
     color: rgb(255, 160, 192);
     font-weight: 300;
+    letter-spacing: 3px;
+    font-family: "Playfair Display", serif;
 }
 
 .header__content {

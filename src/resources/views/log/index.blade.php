@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/log/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/log/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paginate.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
 </head>
 <body class="body">

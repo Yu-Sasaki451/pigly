@@ -26,7 +26,7 @@
                 </div>
 
                 <label class="edit-form__label" for="">体重</label>
-                <input class="edit-form__int" type="number" step="0.1" name="weight" value="{{ $weight_log->weight }}"> kg
+                <input class="edit-form__int" type="text" step="0.1" name="weight" value="{{ $weight_log->weight }}"> kg
                 <div class="pigly__error">
                             @error('weight')
                             {{ $message }}

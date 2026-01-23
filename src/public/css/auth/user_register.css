@@ -24,6 +24,19 @@
     margin: 0 auto;
 }
 
+.header-title--main {
+    color: rgb(255, 133, 173);
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 40px;
+    font-family: "Playfair Display", serif;
+}
+
+.header-title--sub {
+    font-weight: 400;
+    font-family: "Playfair Display", serif;
+}
+
 .register-content__label,
 .register-button__submit,
 .link-login {
@@ -37,6 +50,7 @@
 .register-content__label {
     text-align: left;
     font-weight: bold;
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
@@ -61,7 +75,7 @@
 }
 
 .link-login {
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 14px;
     color: skyblue;
 }

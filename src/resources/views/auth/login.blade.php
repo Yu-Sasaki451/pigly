@@ -6,14 +6,17 @@
     <title>PiGly</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body class="body">
     <form class="form-register" action="/login" method="post">
         @csrf
         <div class="register-content">
             <div class="register-content__heading">
-                <h1>PiGLy</h1>
-                <h2>ログイン</h2>
+                <h1 class="header-title--main">PiGLy</h1>
+                <h2 class="header-title--sub">ログイン</h2>
             </div>
             <div class="register-content-items">
                 <label class="register-content__label">メールアドレス</label>
