@@ -1,11 +1,11 @@
-# mogitate -Seasonal products-
+# PiGly -Weight Records-
 
 ## 概要
 
-・商品と季節の登録<br>
-・商品の詳細確認・変更・消去<br>
-・シンボリックリンクを使用して画像保存<br>
-・商品名での検索、価格順でのソート機能
+・fortifyを使用した登録、認証<br>
+・初期体重登録<br>
+・情報の作成・更新・削除<br>
+・期間での検索機能
 
 ## 使用技術
 
@@ -26,13 +26,13 @@ phpMyAdmin
 1.git クローン
 
 ```
-git clone git@github.com:Yu-Sasaki451/mogitate.git
+git clone git@github.com:Yu-Sasaki451/pigly.git
 ```
 
 2.Docker ビルド
 
 ```
-cd mogitate
+cd pigly
 ```
 
 ```
@@ -87,7 +87,7 @@ php artisan storage:link
 
 ## URL
 
-開発環境：http://localhost/products<br>
+開発環境：http://localhost<br>
 phpMyAdmin：http://localhost:8080/
 
 ## ER 図
